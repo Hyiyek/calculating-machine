@@ -10,8 +10,8 @@ public class Main {
 
         // 부모에서 태어난 자식 객체 생성
         ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator();
-        // 계산기 객체 생성
-        Circle circleCalc = new Circle();
+        // 계산기 객체 생성 부모에서 태어난 자식 객체
+        ArithmeticCircle circleCalc = new ArithmeticCircle();
         // 원의 객체 생성
 
         while (true) {

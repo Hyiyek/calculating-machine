@@ -4,7 +4,7 @@ package com;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Circle {
+public class Circle  {
     private List<Double> circleResults;
     private static final double PI = 3.14;
 
