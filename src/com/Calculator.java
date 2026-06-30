@@ -7,9 +7,16 @@ public class Calculator {
 
 
     private List<Integer> results;
+    // 사칙연산 결과를 담는 리스트 방
+
+    private List<Double> circleResults;
+    // 원의 넓이를 결과 를 담는 리스트 방
+
+    private static final double PI = 3.14;
 
     public Calculator(){
         this.results = new ArrayList<>();
+        this.circleResults = new ArrayList<>();
     }
 
     public int calculate(int num1, int num2, String n) {
@@ -78,6 +85,12 @@ public class Calculator {
             System.out.println(result);
 
         }
+    }
+
+    public double calculateCircleArea(int radius){
+        double area = radius * radius * PI;
+        circleResults.add(area);
+        return area;
     }
 
 
