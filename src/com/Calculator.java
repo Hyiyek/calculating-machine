@@ -5,10 +5,12 @@ import java.util.List;
 
 public class Calculator {
 
-
+    // 사칙연산 결과를 담는 리스트 방
     protected List<Double> results;
     protected List<Double> circleResults;
-    // 사칙연산 결과를 담는 리스트 방
+    // 원의 너비 결과를 담는 리스트방
+
+
 
 
     public Calculator() {
@@ -16,8 +18,8 @@ public class Calculator {
         this.circleResults = new ArrayList<>();
 
     }
+    // 내 생성자를 객체를생성에서 담는다
 
-    
 
     // 공통 기능: 삭제 (사칙연산 결과 삭제)
     public void removeResults() {

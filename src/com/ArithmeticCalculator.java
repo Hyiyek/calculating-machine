@@ -1,25 +1,42 @@
 package com;
 
 public class ArithmeticCalculator extends Calculator {
+
+
+    private final AddOperator addOperator;
+    private final DivideOperator divideOperator;
+    private final MultiplyOperator multiplyOperator;
+    private final SubtractOperator subtractOperator;
+
+    //  2. 생성자도 메서드 바깥으로 독립시킵니다!
+    public ArithmeticCalculator() {
+        this.addOperator = new AddOperator();
+        this.divideOperator = new DivideOperator();
+        this.multiplyOperator = new MultiplyOperator();
+        this.subtractOperator = new SubtractOperator();
+    }
+
+
     public double calculate(int num1, int num2, String n) {
         double box = 0;
 
         switch (n) {
             case "+":
-                box = num1 + num2;
+
+                box = addOperator.operate(num1, num2);
                 break;
             case "-":
-                box = num1 - num2;
+                box = divideOperator.operate(num1,num2);
                 break;
             case "*":
-                box = num1 * num2;
+                box = multiplyOperator.operate(num1,num2);
                 break;
             case "/":
                 if (num2 == 0) {
                     System.out.println("나눗셈 연산에서 0이 될 수 없습니다.");
                     return 0;
                 }
-                box = (double) num1 / num2; // 소수점 계산을 위해 형변환
+                box = subtractOperator.operate(num1,num2);
                 break;
             case "%":
                 if (num2 == 0) {
@@ -32,11 +49,9 @@ public class ArithmeticCalculator extends Calculator {
                 throw new IllegalArgumentException("올바른 연산자가 아닙니다.");
         }
 
-        // 부모에게 물려받은 protected 변수인 'results' 상자에 저장합니다!
+
         results.add(box);
 
         return box;
     }
 }
-
-
