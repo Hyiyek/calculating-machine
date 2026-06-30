@@ -1,6 +1,16 @@
 package com;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Calculator {
+
+
+    private List<Integer> results;
+
+    public Calculator(){
+        this.results = new ArrayList<>();
+    }
 
     public int calculate(int num1, int num2, String n) {
 
@@ -36,9 +46,39 @@ public class Calculator {
                 break;
 
             default:
-                System.out.println("연산자가 일치하지 않습니다.");
+                throw new IllegalArgumentException("올바른 연산자가 아닙니다.");
         }
+
+        
+        results.add(box);
 
         return box;
     }
+
+    public List<Integer> getResults() {
+        return results;
+    }
+
+    public void setResults(List<Integer>results){
+        this.results = results;
+    }
+
+    public void removeResults(){
+        if(!results.isEmpty()){
+            results.remove(0);
+            System.out.println("삭제되었습니다");
+        }
+        else{
+            System.out.println("삭제할 연산 결과가없습니다");
+        }
+    }
+
+    public void inquiryResults(){
+        for (Integer result : results) {
+            System.out.println(result);
+
+        }
+    }
+
+
 }
